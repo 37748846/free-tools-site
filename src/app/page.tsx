@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "免费工具站 - 在线工具集合",
@@ -360,23 +359,5 @@ export default function Home() {
         </div>
       ))}
     </div>
-    <Script
-      id="structured-data"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "免费工具站",
-          "url": "https://lrbar.com",
-          "description": "提供图片处理、编码转换、格式化、站长工具等免费在线工具",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://lrbar.com/tools?q={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
-        }),
-      }}
-    />
   );
 }
