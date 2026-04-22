@@ -72,6 +72,9 @@ export default function RootLayout({
                   <Link href="/favorites" className="text-gray-700 hover:text-gray-900">
                     我的收藏
                   </Link>
+                  <Link href="/stats" className="text-gray-700 hover:text-gray-900">
+                    使用统计
+                  </Link>
                 </nav>
               </div>
             </div>

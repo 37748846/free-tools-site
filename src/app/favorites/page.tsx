@@ -147,9 +147,17 @@ export default function FavoritesPage() {
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow p-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
-            我的收藏
-          </h1>
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-3xl font-bold text-gray-900">
+              我的收藏
+            </h1>
+            <Link
+              href="/tools"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              返回工具列表
+            </Link>
+          </div>
 
           {favoriteTools.length === 0 ? (
             <div className="text-center py-12">
