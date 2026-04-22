@@ -179,6 +179,33 @@ export default function Home() {
         </div>
       </div>
 
+      {/* 教材下载部分 */}
+      <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <span className="mr-2">📚</span>
+          教材下载
+        </h3>
+        <Link
+          href="/textbooks"
+          className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-start space-x-4">
+            <div className="text-4xl">📖</div>
+            <div className="flex-1">
+              <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                免费教材下载
+              </h4>
+              <p className="text-sm text-gray-600 mb-2">
+                小学、初中、高中、大学各科教材PDF下载
+              </p>
+              <span className="inline-block px-2 py-0.5 text-xs font-medium text-green-800 bg-green-100 rounded">
+                70k+ Star
+              </span>
+            </div>
+          </div>
+        </Link>
+      </div>
+
       {/* 本地工具部分 */}
       {categories.map((category) => (
         <div key={category} className="space-y-4">

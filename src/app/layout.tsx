@@ -33,6 +33,9 @@ export default function RootLayout({
                   <Link href="/tools" className="text-gray-700 hover:text-gray-900">
                     工具列表
                   </Link>
+                  <Link href="/textbooks" className="text-gray-700 hover:text-gray-900">
+                    教材下载
+                  </Link>
                 </nav>
               </div>
             </div>
