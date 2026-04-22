@@ -27,7 +27,7 @@ export default function TimestampPage() {
 
       const date = new Date(ts * 1000);
       setDatetime(date.toLocaleString("zh-CN"));
-    } catch (error) {
+    } catch {
       alert("转换失败");
     }
   };
@@ -42,7 +42,7 @@ export default function TimestampPage() {
 
       const ts = Math.floor(date.getTime() / 1000);
       setTimestamp(ts.toString());
-    } catch (error) {
+    } catch {
       alert("转换失败");
     }
   };
@@ -51,7 +51,7 @@ export default function TimestampPage() {
     try {
       await navigator.clipboard.writeText(timestamp);
       alert("已复制时间戳");
-    } catch (error) {
+    } catch {
       alert("复制失败");
     }
   };
@@ -60,7 +60,7 @@ export default function TimestampPage() {
     try {
       await navigator.clipboard.writeText(datetime);
       alert("已复制日期时间");
-    } catch (error) {
+    } catch {
       alert("复制失败");
     }
   };

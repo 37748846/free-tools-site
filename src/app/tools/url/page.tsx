@@ -17,7 +17,7 @@ export default function UrlPage() {
         const decoded = decodeURIComponent(input);
         setOutput(decoded);
       }
-    } catch (error) {
+    } catch {
       setOutput("错误：输入格式不正确");
     }
   };

@@ -11,7 +11,6 @@ export default function ImageCropPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -295,7 +294,7 @@ export default function ImageCropPage() {
         <ul className="text-sm text-gray-700 space-y-1">
           <li>• 上传图片后，拖动虚线框选择裁剪区域</li>
           <li>• 可手动输入裁剪宽度和高度</li>
-          <li>• 点击"裁剪"按钮生成裁剪后的图片</li>
+          <li>• 点击&ldquo;裁剪&rdquo;按钮生成裁剪后的图片</li>
           <li>• 支持下载 PNG 格式的裁剪图片</li>
           <li>• 所有处理在本地完成，图片不会上传到服务器</li>
         </ul>

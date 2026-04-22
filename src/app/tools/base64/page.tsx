@@ -17,7 +17,7 @@ export default function Base64Page() {
         const decoded = decodeURIComponent(escape(atob(input)));
         setOutput(decoded);
       }
-    } catch (error) {
+    } catch {
       setOutput("错误：输入格式不正确");
     }
   };

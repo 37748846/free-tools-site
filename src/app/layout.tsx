@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -26,12 +27,12 @@ export default function RootLayout({
                   免费工具站
                 </h1>
                 <nav className="flex space-x-4">
-                  <a href="/" className="text-gray-700 hover:text-gray-900">
+                  <Link href="/" className="text-gray-700 hover:text-gray-900">
                     首页
-                  </a>
-                  <a href="/tools" className="text-gray-700 hover:text-gray-900">
+                  </Link>
+                  <Link href="/tools" className="text-gray-700 hover:text-gray-900">
                     工具列表
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>
