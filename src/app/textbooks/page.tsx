@@ -84,8 +84,34 @@ export default function TextbooksPage() {
         </div>
       </section>
 
+      {/* Quick Navigation */}
+      <section className="py-8 px-4 bg-white border-b">
+        <div className="max-w-6xl mx-auto">
+          <nav className="flex flex-wrap justify-center gap-4">
+            <a
+              href="#categories"
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              📚 教材分类
+            </a>
+            <a
+              href="#download"
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              ⬇️ 下载方式
+            </a>
+            <a
+              href="#notice"
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              ⚠️ 使用说明
+            </a>
+          </nav>
+        </div>
+      </section>
+
       {/* Categories */}
-      <section className="py-16 px-4">
+      <section id="categories" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             教材分类
@@ -122,7 +148,7 @@ export default function TextbooksPage() {
       </section>
 
       {/* Download Section */}
-      <section className="py-16 px-4 bg-white">
+      <section id="download" className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             下载方式
@@ -130,7 +156,7 @@ export default function TextbooksPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-blue-50 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                方式1：GitHub 下载
+                方式1：GitHub 官方下载
               </h3>
               <p className="text-gray-600 mb-4">
                 直接从 GitHub 仓库下载完整的教材文件
@@ -146,21 +172,62 @@ export default function TextbooksPage() {
             </div>
             <div className="bg-green-50 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                方式2：Git 克隆
+                方式2：国内加速下载 ⚡
+              </h3>
+              <p className="text-gray-600 mb-4">
+                使用国内 GitHub 加速服务，下载速度更快
+              </p>
+              <div className="space-y-2">
+                <a
+                  href="https://ghproxy.com/https://github.com/TapXWorld/ChinaTextbook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
+                >
+                  ghproxy.com 加速
+                </a>
+                <a
+                  href="https://gh.api.99988866.xyz/https://github.com/TapXWorld/ChinaTextbook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
+                >
+                  gh.api.99988866.xyz 加速
+                </a>
+                <a
+                  href="https://mirror.ghproxy.com/https://github.com/TapXWorld/ChinaTextbook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
+                >
+                  mirror.ghproxy.com 加速
+                </a>
+              </div>
+            </div>
+            <div className="bg-purple-50 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                方式3：Git 克隆
               </h3>
               <p className="text-gray-600 mb-4">
                 使用 Git 命令克隆整个仓库到本地
               </p>
-              <code className="block bg-gray-800 text-white p-4 rounded-lg text-sm">
-                git clone https://github.com/TapXWorld/ChinaTextbook.git
-              </code>
+              <div className="space-y-2">
+                <div className="bg-gray-800 text-white p-4 rounded-lg text-sm">
+                  <div className="mb-2 font-semibold">官方地址：</div>
+                  <code>git clone https://github.com/TapXWorld/ChinaTextbook.git</code>
+                </div>
+                <div className="bg-gray-800 text-white p-4 rounded-lg text-sm">
+                  <div className="mb-2 font-semibold">加速地址：</div>
+                  <code>git clone https://ghproxy.com/https://github.com/TapXWorld/ChinaTextbook.git</code>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Notice */}
-      <section className="py-16 px-4">
+      <section id="notice" className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
