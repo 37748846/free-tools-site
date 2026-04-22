@@ -53,6 +53,9 @@ export default function DnsPage() {
               免费工具站
             </Link>
             <nav className="flex space-x-4">
+              <Link href="/" className="text-gray-700 hover:text-gray-900">
+                首页
+              </Link>
               <Link href="/tools" className="text-gray-700 hover:text-gray-900">
                 工具列表
               </Link>

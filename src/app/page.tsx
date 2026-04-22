@@ -1,4 +1,11 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "免费工具站 - 在线工具集合",
+  description: "提供图片处理、编码转换、格式化、站长工具等免费在线工具。支持Base64编码、JSON格式化、二维码生成、WHOIS查询、DNS查询、IP查询等功能。",
+  keywords: "在线工具,图片压缩,Base64编码,JSON格式化,二维码生成,WHOIS查询,DNS查询,IP查询,网站速度测试,站长工具,免费工具",
+};
 
 export default function Home() {
   const tools = [
@@ -352,5 +359,24 @@ export default function Home() {
         </div>
       ))}
     </div>
+
+    {/* 结构化数据 */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "免费工具站",
+          "url": "https://lrbar.com",
+          "description": "提供图片处理、编码转换、格式化、站长工具等免费在线工具",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://lrbar.com/tools?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }),
+      }}
+    />
   );
 }
