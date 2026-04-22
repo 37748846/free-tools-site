@@ -171,8 +171,32 @@ export default function ToolsPage() {
         </Link>
       </div>
 
+      {/* Quick Navigation */}
+      <div className="bg-white rounded-lg p-4 border">
+        <nav className="flex flex-wrap justify-center gap-4">
+          <a
+            href="#ai-tools"
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            🤖 AI工具
+          </a>
+          <a
+            href="#webmaster-tools"
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            🔧 站长工具
+          </a>
+          <a
+            href="#local-tools"
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            🛠️ 本地工具
+          </a>
+        </nav>
+      </div>
+
       {/* AI 工具部分 */}
-      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
+      <div id="ai-tools" className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           <span className="mr-2">🤖</span>
           免费AI工具
@@ -211,7 +235,7 @@ export default function ToolsPage() {
       </div>
 
       {/* 站长工具部分 */}
-      <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+      <div id="webmaster-tools" className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           <span className="mr-2">🔧</span>
           站长工具
@@ -245,7 +269,7 @@ export default function ToolsPage() {
       </div>
 
       {/* 本地工具部分 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="local-tools" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tools.map((tool) => (
           <Link
             key={tool.id}
