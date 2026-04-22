@@ -72,6 +72,34 @@ export default function ToolsPage() {
       icon: "🔄",
       category: "图片工具",
     },
+    {
+      id: "whois",
+      name: "WHOIS 查询",
+      description: "在线 WHOIS 域名查询工具",
+      icon: "🔍",
+      category: "站长工具",
+    },
+    {
+      id: "dns",
+      name: "DNS 查询",
+      description: "在线 DNS 记录查询工具",
+      icon: "🌐",
+      category: "站长工具",
+    },
+    {
+      id: "ip",
+      name: "IP 查询",
+      description: "在线 IP 地址查询工具",
+      icon: "📍",
+      category: "站长工具",
+    },
+    {
+      id: "speed-test",
+      name: "网站速度测试",
+      description: "在线网站速度测试工具",
+      icon: "⚡",
+      category: "站长工具",
+    },
   ];
 
   const aiTools = [
@@ -179,6 +207,40 @@ export default function ToolsPage() {
               </div>
             </a>
           ))}
+        </div>
+      </div>
+
+      {/* 站长工具部分 */}
+      <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <span className="mr-2">🔧</span>
+          站长工具
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {tools
+            .filter((tool) => tool.category === "站长工具")
+            .map((tool) => (
+              <Link
+                key={tool.id}
+                href={`/tools/${tool.id}`}
+                className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="text-3xl">{tool.icon}</div>
+                  <div className="flex-1">
+                    <h4 className="text-base font-semibold text-gray-900 mb-1">
+                      {tool.name}
+                    </h4>
+                    <p className="text-xs text-gray-600 mb-1">
+                      {tool.description}
+                    </p>
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-orange-800 bg-orange-100 rounded">
+                      {tool.category}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
 
