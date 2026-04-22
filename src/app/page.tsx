@@ -57,7 +57,6 @@ export default function Home() {
       description: "在线图片压缩工具",
       icon: "🖼️",
       category: "图片工具",
-      status: "开发中",
     },
     {
       id: "image-crop",
@@ -65,7 +64,6 @@ export default function Home() {
       description: "在线图片裁剪工具",
       icon: "✂️",
       category: "图片工具",
-      status: "开发中",
     },
     {
       id: "format-convert",
@@ -73,7 +71,6 @@ export default function Home() {
       description: "PNG、JPG、WebP 格式转换",
       icon: "🔄",
       category: "图片工具",
-      status: "开发中",
     },
   ];
 
@@ -206,11 +203,6 @@ export default function Home() {
                       <p className="text-sm text-gray-600 mb-2">
                         {tool.description}
                       </p>
-                      {tool.status && (
-                        <span className="inline-block px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded">
-                          {tool.status}
-                        </span>
-                      )}
                     </div>
                   </div>
                 </Link>

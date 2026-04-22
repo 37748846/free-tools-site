@@ -57,7 +57,6 @@ export default function ToolsPage() {
       description: "在线图片压缩工具",
       icon: "🖼️",
       category: "图片工具",
-      status: "开发中",
     },
     {
       id: "image-crop",
@@ -65,7 +64,6 @@ export default function ToolsPage() {
       description: "在线图片裁剪工具",
       icon: "✂️",
       category: "图片工具",
-      status: "开发中",
     },
     {
       id: "format-convert",
@@ -73,7 +71,6 @@ export default function ToolsPage() {
       description: "PNG、JPG、WebP 格式转换",
       icon: "🔄",
       category: "图片工具",
-      status: "开发中",
     },
   ];
 
@@ -202,16 +199,9 @@ export default function ToolsPage() {
                 <p className="text-sm text-gray-600 mb-2">
                   {tool.description}
                 </p>
-                <div className="flex items-center space-x-2">
-                  <span className="inline-block px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded">
-                    {tool.category}
-                  </span>
-                  {tool.status && (
-                    <span className="inline-block px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded">
-                      {tool.status}
-                    </span>
-                  )}
-                </div>
+                <span className="inline-block px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded">
+                  {tool.category}
+                </span>
               </div>
             </div>
           </Link>
