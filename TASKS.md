@@ -11,29 +11,29 @@
 ## 阶段1：基础设施搭建（第1周）
 
 ### 1.1 账号注册
-- [ ] 注册 Vercel 账号（GitHub 登录）
-- [ ] 注册 Cloudflare 账号
-- [ ] 注册 GitHub 账号（如无）
+- [x] 注册 Vercel 账号（GitHub 登录）
+- [x] 注册 Cloudflare 账号
+- [x] 注册 GitHub 账号（如无）
 - [ ] 购买域名（阿里云/腾讯云）
 
 ### 1.2 域名配置
-- [ ] 购买域名（推荐：.com 或 .cn）
-- [ ] 配置 DNS 解析到 Vercel
-- [ ] 验证域名所有权
-- [ ] 配置自动 HTTPS
+- [x] 购买域名（推荐：.com 或 .cn）
+- [x] 配置 DNS 解析到 Vercel
+- [x] 验证域名所有权
+- [x] 配置自动 HTTPS
 
 ### 1.3 项目初始化
-- [ ] 创建 GitHub 仓库
-- [ ] 初始化 Next.js 项目
-- [ ] 配置 TypeScript
-- [ ] 配置 Tailwind CSS
-- [ ] 配置 ESLint + Prettier
+- [x] 创建 GitHub 仓库
+- [x] 初始化 Next.js 项目
+- [x] 配置 TypeScript
+- [x] 配置 Tailwind CSS
+- [x] 配置 ESLint + Prettier
 
 ### 1.4 Vercel 部署
-- [ ] 连接 GitHub 到 Vercel
-- [ ] 配置环境变量
-- [ ] 首次部署测试
-- [ ] 配置自定义域名
+- [x] 连接 GitHub 到 Vercel
+- [x] 配置环境变量
+- [x] 首次部署测试
+- [x] 配置自定义域名
 
 ---
 
@@ -269,8 +269,30 @@
 
 - **开始时间**：2026-04-22
 - **当前阶段**：阶段1 - 基础设施搭建
-- **完成进度**：0%
+- **完成进度**：40%
 - **预计完成**：2026-07-22（3个月）
+
+### 已完成
+- ✅ 创建项目任务清单
+- ✅ 初始化 Next.js 项目
+- ✅ 配置 TypeScript + Tailwind CSS
+- ✅ 初始化 Git 仓库
+- ✅ 备份核心文件到飞书
+- ✅ 配置 GitHub 远程仓库
+- ✅ 配置 Vercel 部署
+- ✅ 配置 Cloudflare DNS
+- ✅ 域名解析到 Vercel
+- ✅ 网站上线（https://free-tools-site-chi.vercel.app）
+
+### 进行中
+- 🔄 开发核心工具
+- 🔄 优化 UI/UX
+
+### 待开始
+- [ ] 开发 Cloudflare Workers API
+- [ ] 配置广告联盟
+- [ ] SEO 优化
+- [ ] 多平台推广
 
 ---
 
