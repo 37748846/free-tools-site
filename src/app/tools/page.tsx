@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function ToolsPage() {
   const tools = [
     {
       id: "base64",
@@ -134,18 +134,16 @@ export default function Home() {
     },
   ];
 
-  const categories = Array.from(new Set(tools.map((tool) => tool.category)));
-  const aiCategories = Array.from(new Set(aiTools.map((tool) => tool.category)));
-
   return (
-    <div className="space-y-8">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          免费在线工具集合
-        </h2>
-        <p className="text-lg text-gray-600">
-          提供图片处理、编码转换、格式化等免费在线工具
-        </p>
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h2 className="text-2xl font-bold text-gray-900">工具列表</h2>
+        <Link
+          href="/"
+          className="text-blue-600 hover:text-blue-800"
+        >
+          返回首页
+        </Link>
       </div>
 
       {/* AI 工具部分 */}
@@ -172,9 +170,14 @@ export default function Home() {
                   <p className="text-xs text-gray-600 mb-1">
                     {tool.description}
                   </p>
-                  <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 bg-purple-100 rounded">
-                    {tool.category}
-                  </span>
+                  <div className="flex items-center space-x-2">
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 bg-purple-100 rounded">
+                      {tool.category}
+                    </span>
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-blue-800 bg-blue-100 rounded">
+                      外部链接
+                    </span>
+                  </div>
                 </div>
               </div>
             </a>
@@ -183,41 +186,37 @@ export default function Home() {
       </div>
 
       {/* 本地工具部分 */}
-      {categories.map((category) => (
-        <div key={category} className="space-y-4">
-          <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">
-            {category}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {tools
-              .filter((tool) => tool.category === category)
-              .map((tool) => (
-                <Link
-                  key={tool.id}
-                  href={`/tools/${tool.id}`}
-                  className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-4xl">{tool.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                        {tool.name}
-                      </h4>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {tool.description}
-                      </p>
-                      {tool.status && (
-                        <span className="inline-block px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded">
-                          {tool.status}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-          </div>
-        </div>
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tools.map((tool) => (
+          <Link
+            key={tool.id}
+            href={`/tools/${tool.id}`}
+            className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-start space-x-4">
+              <div className="text-4xl">{tool.icon}</div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                  {tool.name}
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">
+                  {tool.description}
+                </p>
+                <div className="flex items-center space-x-2">
+                  <span className="inline-block px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded">
+                    {tool.category}
+                  </span>
+                  {tool.status && (
+                    <span className="inline-block px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded">
+                      {tool.status}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
