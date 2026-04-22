@@ -187,20 +187,20 @@ export default function TextbooksPage() {
                   ghproxy.com 加速
                 </a>
                 <a
-                  href="https://gh.api.99988866.xyz/https://github.com/TapXWorld/ChinaTextbook"
+                  href="https://ghps.cc/https://github.com/TapXWorld/ChinaTextbook"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
                 >
-                  gh.api.99988866.xyz 加速
+                  ghps.cc 加速
                 </a>
                 <a
-                  href="https://mirror.ghproxy.com/https://github.com/TapXWorld/ChinaTextbook"
+                  href="https://gitclone.com/github.com/TapXWorld/ChinaTextbook"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
                 >
-                  mirror.ghproxy.com 加速
+                  gitclone.com 加速
                 </a>
               </div>
             </div>
@@ -219,6 +219,10 @@ export default function TextbooksPage() {
                 <div className="bg-gray-800 text-white p-4 rounded-lg text-sm">
                   <div className="mb-2 font-semibold">加速地址：</div>
                   <code>git clone https://ghproxy.com/https://github.com/TapXWorld/ChinaTextbook.git</code>
+                </div>
+                <div className="bg-gray-800 text-white p-4 rounded-lg text-sm">
+                  <div className="mb-2 font-semibold">备用加速：</div>
+                  <code>git clone https://ghps.cc/https://github.com/TapXWorld/ChinaTextbook.git</code>
                 </div>
               </div>
             </div>
