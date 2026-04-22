@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "免费工具站 - 在线工具集合",
@@ -359,7 +360,8 @@ export default function Home() {
         </div>
       ))}
     </div>
-    <script
+    <Script
+      id="structured-data"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
