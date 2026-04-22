@@ -359,7 +359,6 @@ export default function Home() {
         </div>
       ))}
     </div>
-    <!-- 结构化数据 -->
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
