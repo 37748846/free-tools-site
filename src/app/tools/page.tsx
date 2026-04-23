@@ -72,34 +72,6 @@ export default function ToolsPage() {
       icon: "🔄",
       category: "图片工具",
     },
-    {
-      id: "whois",
-      name: "WHOIS 查询",
-      description: "在线 WHOIS 域名查询工具",
-      icon: "🔍",
-      category: "站长工具",
-    },
-    {
-      id: "dns",
-      name: "DNS 查询",
-      description: "在线 DNS 记录查询工具",
-      icon: "🌐",
-      category: "站长工具",
-    },
-    {
-      id: "ip",
-      name: "IP 查询",
-      description: "在线 IP 地址查询工具",
-      icon: "📍",
-      category: "站长工具",
-    },
-    {
-      id: "speed-test",
-      name: "网站速度测试",
-      description: "在线网站速度测试工具",
-      icon: "⚡",
-      category: "站长工具",
-    },
   ];
 
   const aiTools = [

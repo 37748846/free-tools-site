@@ -59,10 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "image-compress",
     "image-crop",
     "format-convert",
-    "whois",
-    "dns",
-    "ip",
-    "speed-test",
   ];
 
   tools.forEach((tool) => {
