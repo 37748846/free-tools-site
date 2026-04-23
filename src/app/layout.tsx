@@ -69,6 +69,9 @@ export default function RootLayout({
                   <Link href="/textbooks" className="text-gray-700 hover:text-gray-900">
                     教材下载
                   </Link>
+                  <Link href="/blog" className="text-gray-700 hover:text-gray-900">
+                    博客
+                  </Link>
                   <Link href="/favorites" className="text-gray-700 hover:text-gray-900">
                     我的收藏
                   </Link>

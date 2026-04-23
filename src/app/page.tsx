@@ -214,6 +214,56 @@ export default function Home() {
         </div>
       </div>
 
+      {/* 博客部分 */}
+      <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <span className="mr-2">📝</span>
+          博客文章
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a
+            href="/blog"
+            className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-start space-x-3">
+              <div className="text-3xl">📖</div>
+              <div className="flex-1">
+                <h4 className="text-base font-semibold text-gray-900 mb-1">
+                  免费工具站博客
+                </h4>
+                <p className="text-xs text-gray-600 mb-1">
+                  分享技术文章和学习心得
+                </p>
+                <span className="inline-block px-2 py-0.5 text-xs font-medium text-pink-800 bg-pink-100 rounded">
+                  博客
+                </span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://hexo.ncs.fun"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-start space-x-3">
+              <div className="text-3xl">📚</div>
+              <div className="flex-1">
+                <h4 className="text-base font-semibold text-gray-900 mb-1">
+                  Hexo 博客
+                </h4>
+                <p className="text-xs text-gray-600 mb-1">
+                  hexo.ncs.fun
+                </p>
+                <span className="inline-block px-2 py-0.5 text-xs font-medium text-pink-800 bg-pink-100 rounded">
+                  外部链接
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       {/* 教材下载部分 */}
       <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
