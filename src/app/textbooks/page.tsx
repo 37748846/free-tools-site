@@ -34,28 +34,6 @@ export default function TextbooksPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-gray-900">
-              免费工具站
-            </Link>
-            <nav className="flex space-x-4">
-              <Link href="/" className="text-gray-700 hover:text-gray-900">
-                首页
-              </Link>
-              <Link href="/tools" className="text-gray-700 hover:text-gray-900">
-                工具列表
-              </Link>
-              <Link href="/textbooks" className="text-gray-700 hover:text-gray-900">
-                教材下载
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -153,7 +131,7 @@ export default function TextbooksPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             下载方式
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-blue-50 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 方式1：GitHub 官方下载

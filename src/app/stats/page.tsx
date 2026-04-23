@@ -138,42 +138,22 @@ export default function StatsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-gray-900">
-              免费工具站
-            </Link>
-            <nav className="flex space-x-4">
-              <Link href="/" className="text-gray-700 hover:text-gray-900">
-                首页
-              </Link>
-              <Link href="/tools" className="text-gray-700 hover:text-gray-900">
-                工具列表
-              </Link>
-              <Link href="/textbooks" className="text-gray-700 hover:text-gray-900">
-                教材下载
-              </Link>
-              <Link href="/favorites" className="text-gray-700 hover:text-gray-900">
-                我的收藏
-              </Link>
-              <Link href="/stats" className="text-blue-600 hover:text-blue-800 font-semibold">
-                使用统计
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="space-y-6">
           {/* 总体统计 */}
           <div className="bg-white rounded-lg shadow p-6">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">
-              使用统计
-            </h1>
+            <div className="flex justify-between items-center mb-6">
+              <h1 className="text-3xl font-bold text-gray-900">
+                使用统计
+              </h1>
+              <Link
+                href="/tools"
+                className="text-blue-600 hover:text-blue-800"
+              >
+                返回工具列表
+              </Link>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-blue-50 rounded-lg p-6 text-center">
                 <div className="text-4xl font-bold text-blue-600 mb-2">

@@ -119,31 +119,6 @@ export default function FavoritesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-gray-900">
-              免费工具站
-            </Link>
-            <nav className="flex space-x-4">
-              <Link href="/" className="text-gray-700 hover:text-gray-900">
-                首页
-              </Link>
-              <Link href="/tools" className="text-gray-700 hover:text-gray-900">
-                工具列表
-              </Link>
-              <Link href="/textbooks" className="text-gray-700 hover:text-gray-900">
-                教材下载
-              </Link>
-              <Link href="/favorites" className="text-blue-600 hover:text-blue-800 font-semibold">
-                我的收藏
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow p-6">
