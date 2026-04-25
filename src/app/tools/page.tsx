@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 export default function ToolsPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+
   const tools = [
     {
       id: "base64",
@@ -131,36 +137,83 @@ export default function ToolsPage() {
     },
   ];
 
+  // 过滤工具
+  const filteredTools = tools.filter(
+    (tool) =>
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredAiTools = aiTools.filter(
+    (tool) =>
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // 切换暗色模式
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark');
+    }
+  };
+
   return (
-    <div className="space-y-6">
+    <div className={`space-y-6 ${darkMode ? 'dark' : ''}`}>
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">工具列表</h2>
-        <Link
-          href="/"
-          className="text-blue-600 hover:text-blue-800"
-        >
-          返回首页
-        </Link>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          工具列表
+        </h2>
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={toggleDarkMode}
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          >
+            {darkMode ? '☀️ 亮色' : '🌙 暗色'}
+          </button>
+          <Link
+            href="/"
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+          >
+            返回首页
+          </Link>
+        </div>
+      </div>
+
+      {/* 搜索框 */}
+      <div className="relative">
+        <input
+          type="text"
+          placeholder="搜索工具..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full px-4 py-3 pl-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          🔍
+        </span>
       </div>
 
       {/* Quick Navigation */}
-      <div className="bg-white rounded-lg p-4 border">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
         <nav className="flex flex-wrap justify-center gap-4">
           <a
             href="#ai-tools"
-            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           >
             🤖 AI工具
           </a>
           <a
             href="#webmaster-tools"
-            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           >
             🔧 站长工具
           </a>
           <a
             href="#local-tools"
-            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           >
             🛠️ 本地工具
           </a>
@@ -168,34 +221,34 @@ export default function ToolsPage() {
       </div>
 
       {/* AI 工具部分 */}
-      <div id="ai-tools" className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+      <div id="ai-tools" className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900 dark:to-blue-900 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
           <span className="mr-2">🤖</span>
           免费AI工具
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {aiTools.map((tool) => (
+          {filteredAiTools.map((tool) => (
             <a
               key={tool.id}
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+              className="block p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
             >
               <div className="flex items-start space-x-3">
                 <div className="text-3xl">{tool.icon}</div>
                 <div className="flex-1">
-                  <h4 className="text-base font-semibold text-gray-900 mb-1">
+                  <h4 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
                     {tool.name}
                   </h4>
-                  <p className="text-xs text-gray-600 mb-1">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">
                     {tool.description}
                   </p>
                   <div className="flex items-center space-x-2">
-                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 bg-purple-100 rounded">
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 dark:text-purple-200 bg-purple-100 dark:bg-purple-900 rounded">
                       {tool.category}
                     </span>
-                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-blue-800 bg-blue-100 rounded">
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-200 bg-blue-100 dark:bg-blue-900 rounded">
                       外部链接
                     </span>
                   </div>
@@ -207,30 +260,30 @@ export default function ToolsPage() {
       </div>
 
       {/* 站长工具部分 */}
-      <div id="webmaster-tools" className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+      <div id="webmaster-tools" className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900 dark:to-red-900 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
           <span className="mr-2">🔧</span>
           站长工具
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {tools
+          {filteredTools
             .filter((tool) => tool.category === "站长工具")
             .map((tool) => (
               <Link
                 key={tool.id}
                 href={`/tools/${tool.id}`}
-                className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+                className="block p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start space-x-3">
                   <div className="text-3xl">{tool.icon}</div>
                   <div className="flex-1">
-                    <h4 className="text-base font-semibold text-gray-900 mb-1">
+                    <h4 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
                       {tool.name}
                     </h4>
-                    <p className="text-xs text-gray-600 mb-1">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">
                       {tool.description}
                     </p>
-                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-orange-800 bg-orange-100 rounded">
+                    <span className="inline-block px-2 py-0.5 text-xs font-medium text-orange-800 dark:text-orange-200 bg-orange-100 dark:bg-orange-900 rounded">
                       {tool.category}
                     </span>
                   </div>
@@ -242,22 +295,22 @@ export default function ToolsPage() {
 
       {/* 本地工具部分 */}
       <div id="local-tools" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {tools.map((tool) => (
+        {filteredTools.map((tool) => (
           <Link
             key={tool.id}
             href={`/tools/${tool.id}`}
-            className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+            className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
           >
             <div className="flex items-start space-x-4">
               <div className="text-4xl">{tool.icon}</div>
               <div className="flex-1">
-                <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                   {tool.name}
                 </h4>
-                <p className="text-sm text-gray-600 mb-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                   {tool.description}
                 </p>
-                <span className="inline-block px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded">
+                <span className="inline-block px-2 py-1 text-xs font-medium text-blue-800 dark:text-blue-200 bg-blue-100 dark:bg-blue-900 rounded">
                   {tool.category}
                 </span>
               </div>

@@ -1,13 +1,11 @@
-import Link from "next/link";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "免费工具站 - 在线工具集合",
-  description: "提供图片处理、编码转换、格式化、站长工具等免费在线工具。支持Base64编码、JSON格式化、二维码生成、WHOIS查询、DNS查询、IP查询等功能。",
-  keywords: "在线工具,图片压缩,Base64编码,JSON格式化,二维码生成,WHOIS查询,DNS查询,IP查询,网站速度测试,站长工具,免费工具",
-};
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const tools = [
     {
       id: "base64",
@@ -138,45 +136,73 @@ export default function Home() {
     },
   ];
 
-  const categories = Array.from(new Set(tools.map((tool) => tool.category)));
-  const aiCategories = Array.from(new Set(aiTools.map((tool) => tool.category)));
+  // 过滤工具
+  const filteredTools = tools.filter(
+    (tool) =>
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredAiTools = aiTools.filter(
+    (tool) =>
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const categories = Array.from(new Set(filteredTools.map((tool) => tool.category)));
 
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           免费在线工具集合
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-600 dark:text-gray-400">
           提供图片处理、编码转换、格式化等免费在线工具
         </p>
       </div>
 
+      {/* 搜索框 */}
+      <div className="relative max-w-2xl mx-auto">
+        <input
+          type="text"
+          placeholder="搜索工具..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full px-4 py-3 pl-10 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          🔍
+        </span>
+      </div>
+
       {/* AI 工具部分 */}
-      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+      <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900 dark:to-blue-900 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
           <span className="mr-2">🤖</span>
           免费AI工具
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {aiTools.map((tool) => (
+          {filteredAiTools.map((tool) => (
             <a
               key={tool.id}
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+              className="block p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
             >
               <div className="flex items-start space-x-3">
                 <div className="text-3xl">{tool.icon}</div>
                 <div className="flex-1">
-                  <h4 className="text-base font-semibold text-gray-900 mb-1">
+                  <h4 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
                     {tool.name}
                   </h4>
-                  <p className="text-xs text-gray-600 mb-1">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">
                     {tool.description}
                   </p>
-                  <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 bg-purple-100 rounded">
+                  <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 dark:text-purple-200 bg-purple-100 dark:bg-purple-900 rounded">
                     {tool.category}
                   </span>
                 </div>
@@ -187,25 +213,25 @@ export default function Home() {
       </div>
 
       {/* 教材下载部分 */}
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+      <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900 dark:to-blue-900 rounded-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
           <span className="mr-2">📚</span>
           教材下载
         </h3>
         <Link
           href="/textbooks"
-          className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+          className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
         >
           <div className="flex items-start space-x-4">
             <div className="text-4xl">📖</div>
             <div className="flex-1">
-              <h4 className="text-lg font-semibold text-gray-900 mb-1">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                 免费教材下载
               </h4>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 小学、初中、高中、大学各科教材PDF下载
               </p>
-              <span className="inline-block px-2 py-0.5 text-xs font-medium text-green-800 bg-green-100 rounded">
+              <span className="inline-block px-2 py-0.5 text-xs font-medium text-green-800 dark:text-green-200 bg-green-100 dark:bg-green-900 rounded">
                 70k+ Star
               </span>
             </div>
@@ -216,25 +242,25 @@ export default function Home() {
       {/* 本地工具部分 */}
       {categories.map((category) => (
         <div key={category} className="space-y-4">
-          <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">
+          <h3 className="text-xl font-semibold text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
             {category}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {tools
+            {filteredTools
               .filter((tool) => tool.category === category)
               .map((tool) => (
                 <Link
                   key={tool.id}
                   href={`/tools/${tool.id}`}
-                  className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+                  className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="text-4xl">{tool.icon}</div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                         {tool.name}
                       </h4>
-                      <p className="text-sm text-gray-600 mb-2">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                         {tool.description}
                       </p>
                     </div>
