@@ -164,7 +164,7 @@ export default function ToolsPage() {
     <div className={`space-y-6 ${darkMode ? 'dark' : ''}`}>
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-          工具列表
+          在线工具
         </h2>
         <div className="flex items-center space-x-4">
           <button

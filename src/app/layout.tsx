@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "免费工具站 - 在线工具集合",
-    template: "%s - 免费工具站",
+    default: "在线工具站 - 免费在线工具集合",
+    template: "%s - 在线工具站",
   },
   description: "提供图片处理、编码转换、格式化等免费在线工具。支持Base64编码、JSON格式化、二维码生成等功能。",
   keywords: "在线工具,图片压缩,Base64编码,JSON格式化,二维码生成,免费工具",
-  authors: [{ name: "免费工具站" }],
-  creator: "免费工具站",
-  publisher: "免费工具站",
+  authors: [{ name: "在线工具站" }],
+  creator: "在线工具站",
+  publisher: "在线工具站",
   robots: {
     index: true,
     follow: true,
