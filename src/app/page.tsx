@@ -212,41 +212,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 博客部分 */}
-      <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900 dark:to-blue-900 rounded-lg p-6">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
-          <span className="mr-2">📝</span>
-          博客文章
-        </h3>
-        <Link
-          href="/blog"
-          className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
-        >
-          <div className="flex items-start space-x-4">
-            <div className="text-4xl">📖</div>
-            <div className="flex-1">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                查看博客文章
-              </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                技术教程、工具使用指南和实用技巧
-              </p>
-              <span className="inline-block px-2 py-0.5 text-xs font-medium text-green-800 dark:text-green-200 bg-green-100 dark:bg-green-900 rounded">
-                持续更新
-              </span>
-            </div>
-          </div>
-        </Link>
-      </div>
-
       {/* 教材下载部分 */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900 dark:to-pink-900 rounded-lg p-6">
+      <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900 dark:to-blue-900 rounded-lg p-6">
         <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
           <span className="mr-2">📚</span>
           教材下载
         </h3>
         <Link
-          href="/blog/free-textbooks"
+          href="/textbooks"
           className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow"
         >
           <div className="flex items-start space-x-4">
@@ -258,7 +231,7 @@ export default function Home() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 小学、初中、高中、大学各科教材PDF下载
               </p>
-              <span className="inline-block px-2 py-0.5 text-xs font-medium text-purple-800 dark:text-purple-200 bg-purple-100 dark:bg-purple-900 rounded">
+              <span className="inline-block px-2 py-0.5 text-xs font-medium text-green-800 dark:text-green-200 bg-green-100 dark:bg-green-900 rounded">
                 70k+ Star
               </span>
             </div>

@@ -33,8 +33,8 @@ export default function Header() {
             <Link href="/tools" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
               在线工具
             </Link>
-            <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              博客
+            <Link href="/textbooks" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              教材下载
             </Link>
             <button
               onClick={toggleDarkMode}
