@@ -34,7 +34,7 @@ export default function Header() {
               在线工具
             </Link>
             <Link href="/textbooks" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              教材下载
+              小初高教材
             </Link>
             <button
               onClick={toggleDarkMode}
